@@ -1,124 +1,38 @@
-# Pandas bibliotēkas analīzes projekts
+# Pandas bibliotekas analizes projekts
 
-## Projekta apraksts
+Skolas projekts, kura mērķis ir izpētīt Python bibliotēku "pandas", izveidot 15 praktiskus kodu piemērus un uztaisīt vienkāršu lietotāja saskarni (GUI) datu apskatei.
 
-Šajā projektā tiek analizēta Python bibliotēka `pandas`.
-Projekta laikā tika izveidoti 15 piemēri, kas demonstrē dažādas pandas funkcijas datu apstrādei un analīzei.
+## Kāpēc tieši Pandas?
+Izvēlējos pandas bibliotēku, jo tā ir populārākais rīks Python vidē, kad vajag strādāt ar tabulām (piemēram, CSV vai Excel failiem). Standarta Python rīki šādiem uzdevumiem prasa rakstīt pārāk daudz koda rindiņu, bet pandas ļauj ielasīt, filtrēt un kārtot datus ar dažām komandām. Tas ievērojami paātrina darbu un palīdz vieglāk saprast datu struktūru.
 
----
+## Projekta struktūra
+* main.py - Galvenā programma ar CustomTkinter vizuālo logu, kur var apskatīt datus.
+* students.csv - Testa dati (skolēnu vārdi, vecumi, klases un atzīmes), kas tiek izmantoti piemēros.
+* requirements.txt - Vajadzīgās bibliotēkas (pandas, customtkinter).
+* example_01_read_csv.py līdz example_15_plot.py - 15 atsevišķi faili, kur katrā ir parādīta viena konkrēta funkcija ar komentāriem.
 
-# Izmantotās tehnoloģijas
+## Izpētītās 15 funkcijas
 
-- Python
-- pandas
-- matplotlib
-- GitHub
+1. pd.read_csv() - Izmanto, lai ielādētu datus no CSV faila un pārvērstu tos DataFrame objektā.
+2. pd.DataFrame() - Ļauj manuāli izveidot datu tabulu no Python sarakstiem vai vārdnīcām.
+3. df.head() - Parāda pirmās 5 tabulas rindiņas, lai ātri apskatītu faila saturu.
+4. df.tail() - Parāda pēdējās 5 tabulas rindiņas, lai pārbaudītu faila beigas.
+5. df.info() - Sniedz tehnisko informāciju par tabulu (kolonnu nosaukumi, datu tipi, aizpildītās vērtības).
+6. df.describe() - Aprēķina pamata statistiku ciparu kolonnām (vidējo vērtību, min, max, mediānu).
+7. df.sort_values() - Sakārto tabulas rindiņas pēc izvēlētās kolonnas (augošā vai dilstošā secībā).
+8. df[df['kolonna'] > x] (Filtrēšana) - Atlasa tikai tās rindiņas, kas atbilst konkrētam nosacījumam.
+9. df.groupby() - Sagrupē datus pēc kādas pazīmes (piemēram, pa klasēm) un aprēķina kopējos rādītājus.
+10. pd.merge() - Apvieno divas dažādas tabulas vienā, izmantojot kopīgu kolonnu (ID).
+11. df.fillna() - Aizpilda tukšās vai trūkstošās vērtības tabulā ar norādīto tekstu vai skaitli.
+12. df.dropna() - Izmet no tabulas visas rindiņas, kurās trūkst kādi dati.
+13. df.apply() - Ļauj izpildīt kādu specifisku funkciju vai formulu uzreiz visai kolonnai.
+14. df.to_csv() - Saglabā apstrādāto tabulu atpakaļ jaunā CSV failā.
+15. df.plot() - Izveido vienkāršu vizuālu grafiku vai diagrammu, balstoties uz tabulas datiem.
 
----
+## Secinājumi par Pandas
 
-# Projekta struktūra
+Ieguvumi:
+Ļoti ātri strādā ar lieliem datu apjomiem. Tam ir milzīga dokumentācija un internetā ir viegli atrast risinājumus kļūdām. Viena rinda koda var aizstāt veselu ciklu, ko vajadzētu rakstīt parastā Python.
 
-```text
-pandas-project
-│
-├── examples
-│   ├── example_01_read_csv.py
-│   ├── example_02_dataframe.py
-│   ├── example_03_head.py
-│   ├── example_04_tail.py
-│   ├── example_05_info.py
-│   ├── example_06_describe.py
-│   ├── example_07_sort.py
-│   ├── example_08_filter.py
-│   ├── example_09_groupby.py
-│   ├── example_10_merge.py
-│   ├── example_11_fillna.py
-│   ├── example_12_dropna.py
-│   ├── example_13_apply.py
-│   ├── example_14_to_csv.py
-│   └── example_15_plot.py
-│
-├── data
-│   └── students.csv
-│
-├── main.py
-├── README.md
-└── requirements.txt
-```
-
----
-
-# Izmantotās pandas funkcijas
-
-| Funkcija | Apraksts |
-|---|---|
-| read_csv() | Nolasa CSV failu |
-| DataFrame() | Izveido datu tabulu |
-| head() | Parāda pirmās rindas |
-| tail() | Parāda pēdējās rindas |
-| info() | Informācija par datiem |
-| describe() | Statistika |
-| sort_values() | Kārtošana |
-| filtering | Filtrēšana |
-| groupby() | Grupēšana |
-| merge() | Tabulu apvienošana |
-| fillna() | Tukšo vērtību aizvietošana |
-| dropna() | Tukšo vērtību dzēšana |
-| apply() | Funkciju pielietošana |
-| to_csv() | Saglabāšana CSV |
-| plot() | Grafiku veidošana |
-
----
-
-# Bibliotēkas priekšrocības
-
-- Ātra datu apstrāde
-- Ērta sintakse
-- Ļoti populāra datu analīzē
-- Vienkārša CSV un Excel failu apstrāde
-- Plašs funkciju klāsts
-
----
-
-# Bibliotēkas trūkumi
-
-- Lieliem datiem nepieciešama daudz operatīvā atmiņa
-- Dažām funkcijām sarežģīta sintakse
-- Nepieciešamas zināšanas datu analīzē
-
----
-
-# Secinājumi
-
-Pandas ir ļoti noderīga Python bibliotēka datu analīzei.
-Tā palīdz ātri apstrādāt tabulas, filtrēt informāciju, veikt aprēķinus un saglabāt rezultātus failos.
-
-Šī bibliotēka ir piemērota:
-- mācībām,
-- datu analīzei,
-- biznesa projektiem,
-- mašīnmācīšanās projektiem.
-
----
-
-# Kā palaist projektu
-
-## 1. Instalēt bibliotēkas
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 2. Palaist programmu
-
-```bash
-python main.py
-```
-
----
-
-# GitHub
-
-Projektā izmantota GitHub versiju kontrole ar vairākiem commit.
+Ierobežojumi:
+Patērē diezgan daudz operatīvās atmiņas (RAM), jo visi dati tiek ielādēti uzreiz atmiņā. Sākumā ir grūti pierast pie sintakses (piemēram, loc un iloc atšķirībām), un kļūdu paziņojumi mēdz būt ļoti gari un grūti salasāmi.
